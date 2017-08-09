@@ -12,9 +12,9 @@ Application setup:
 
 6) sudo su - postgres
     
-    a) create user service-registry_user with password 'apj0702';
+    a) create user service_registry_user with password 'apj0702';
     
-    b) create database service-registry_database with owner service-registry_user;
+    b) create database service_registry_database with owner service_registry_user;
 
 7) python shell
 

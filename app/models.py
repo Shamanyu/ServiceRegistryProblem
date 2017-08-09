@@ -11,8 +11,9 @@ class ServiceRegistry(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	service = db.Column(db.String(255), unique=True, nullable=False)
 	created_on = db.Column(db.DateTime, server_default=db.func.now())
-    updated_on = db.Column(
-    	db.DateTime, server_default=db.func.now(), onupdate=db.func.now())
+	updated_on = db.Column(
+    	db.DateTime, server_default=db.func.now(), onupdate=db.func.now()
+    )
 
 class ServiceInstance(db.Model):
 
@@ -23,5 +24,5 @@ class ServiceInstance(db.Model):
 	port = db.Column(db.String(255), nullable=False, primary_key=True)
 	health = db.Column(db.Integer)
 	created_on = db.Column(db.DateTime, server_default=db.func.now())
-    updated_on = db.Column(
+	updated_on = db.Column(
     	db.DateTime, server_default=db.func.now(), onupdate=db.func.now())

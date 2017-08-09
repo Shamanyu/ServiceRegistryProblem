@@ -1,5 +1,5 @@
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-SQLALCHEMY_DATABASE_URI = 'postgresql://service-registry_user:apj0702@localhost/service-registry_database'
+SQLALCHEMY_DATABASE_URI = 'postgresql://service_registry_user:apj0702@localhost/service_registry_database'
 MACHINE_IP = '127.0.0.1'
 MACHINE_PORT = '5002'
 LOGGER_FILE_LOCATION = './log/'

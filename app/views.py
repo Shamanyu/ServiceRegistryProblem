@@ -1,13 +1,13 @@
-from app import app
+from controller import application
 from models import ServiceRegistry
 from models import ServiceInstance
 
-@app.route('/')
-@app.route('/index')
+@application.route('/')
+@application.route('/index')
 def index():
-	return "Service registry app"
+	return "Service registry application"
 
-@app.route('/register', method=['POST'])
+@application.route('/register', methods=['POST'])
 def register():
 	if request.json:
 		service = request.json['service']
@@ -41,7 +41,7 @@ def register():
 		return True
 	return False
 
-@app.route('deregister', method=['POST'])
+@application.route('/deregister', methods=['POST'])
 def deregister():
 	if request.json:
 		service = request.json['service']
@@ -58,7 +58,7 @@ def deregister():
 		return True
 	return False
 
-@app.route('heartbeat', method=['POST'])
+@application.route('/heartbeat', methods=['POST'])
 def heartbeat():
 	if request.json:
 		service = request.json['service']
@@ -77,7 +77,7 @@ def heartbeat():
 		return True
 	return False
 
-@app.route('service-info/<service>', method=['GET'])
+@application.route('/service-info/<service>', methods=['GET'])
 def service_info(service):
 	service_data = ServiceRegistry.filter_by(
 		{
