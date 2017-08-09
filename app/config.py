@@ -1,0 +1,7 @@
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_DATABASE_URI = 'postgresql://service-registry_user:apj0702@localhost/service-registry_database'
+MACHINE_IP = '127.0.0.1'
+MACHINE_PORT = '5002'
+LOGGER_FILE_LOCATION = './log/'
+TEMPLATES_AUTO_RELOAD = True
+SEND_FILE_MAX_AGE_DEFAULT = 0
