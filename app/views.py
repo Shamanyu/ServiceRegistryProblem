@@ -1,13 +1,15 @@
+from flask import request
+
 from controller import application
 from models import ServiceRegistry
 from models import ServiceInstance
 
-@application.route('/')
-@application.route('/index')
+@application.route('/service-registry/')
+@application.route('/service-registry/index')
 def index():
 	return "Service registry application"
 
-@application.route('/register', methods=['POST'])
+@application.route('/service-registry/register', methods=['POST'])
 def register():
 	if request.json:
 		service = request.json['service']
@@ -41,7 +43,7 @@ def register():
 		return True
 	return False
 
-@application.route('/deregister', methods=['POST'])
+@application.route('/service-registry/deregister', methods=['POST'])
 def deregister():
 	if request.json:
 		service = request.json['service']
@@ -58,7 +60,7 @@ def deregister():
 		return True
 	return False
 
-@application.route('/heartbeat', methods=['POST'])
+@application.route('/service-registry/heartbeat', methods=['POST'])
 def heartbeat():
 	if request.json:
 		service = request.json['service']
@@ -77,7 +79,7 @@ def heartbeat():
 		return True
 	return False
 
-@application.route('/service-info/<service>', methods=['GET'])
+@application.route('/service-registry/service-info/<service>', methods=['GET'])
 def service_info(service):
 	service_data = ServiceRegistry.filter_by(
 		{
